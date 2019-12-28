@@ -65,9 +65,8 @@ public class loadHomepagesInDiffBrowsers {
 			
 			System.out.println("TODO - stuff to do here... ");
 			// TODO 1. in all browsers, might have to wait a few seconds after loading the URL before XPath works
-			// TODO 2. right now the logger is not writing anything... find out why
-			// TODO 3. check in. start a new project using clone. add test cases
-			// TODO 4. run test suite, add maven batch file, add jenkins batch file
+			// TODO 2. check in. start a new project using clone. add test cases
+			// TODO 3. run test suite, add maven batch file, add jenkins batch file
 
 		} catch (Exception ex) {
 			//
