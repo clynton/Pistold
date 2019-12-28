@@ -20,7 +20,7 @@ public class loadHomepagesInDiffBrowsers {
 	@Test(dataProvider = "testWhichBrowsers")
 	public void gotoHomePages(Browser browser) {
 
-		logCollector.debug("qkjhdgyuh12321asjfdgasfd233 Getting Browser: " + browser);
+		logCollector.debug("Getting Browser: " + browser);
 
 		WebDriver driver = browserProvider.getBrowser(browser);
 
