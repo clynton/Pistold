@@ -12,8 +12,9 @@ public class configSettings {
 		public static final long DelayWaitingForPageLoad_s = 30;
 		public static final int DelayBeforeCloseBrowsers_s = 10;
 		public static final int DelayBeforeLoadingUrlInIE_s = 3;
+		public static final int DelayAfterLoadingUrl_s = 2;
 		public static final int PageLoadTimeoutForIE_s = 5;
-
+		public static final int DelayAfterClickButton_ms = 2000;
 	}
 
 	public class SeleniumDriverPropNames {

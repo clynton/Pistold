@@ -1,21 +1,23 @@
 package testcases;
 
+import org.testng.annotations.Test;
+import org.testng.AssertJUnit;
 import java.util.concurrent.TimeUnit;
 
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
-import org.testng.Assert;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.DataProvider;
-import org.testng.annotations.Test;
-
 import utilities.browserProvider;
+import utilities.buttonClicker;
 import utilities.configSettings;
 import utilities.configSettings.Browser;
 import utilities.logCollector;
+import utilities.pageElementLocators;
 import utilities.testData;
 
-public class loadHomepagesInDiffBrowsers {
+public class loadHomepageInDiffBrowsers {
 
 	@Test(dataProvider = "testWhichBrowsers")
 	public void gotoHomePages(Browser browser) {
@@ -62,11 +64,6 @@ public class loadHomepagesInDiffBrowsers {
 			}
 
 			driver.get(testData.MainSitePage.Url);
-			
-			System.out.println("TODO - stuff to do here... ");
-			// TODO 1. in all browsers, might have to wait a few seconds after loading the URL before XPath works
-			// TODO 2. check in. start a new project using clone. add test cases
-			// TODO 3. run test suite, add maven batch file, add jenkins batch file
 
 		} catch (Exception ex) {
 			//
@@ -81,6 +78,23 @@ public class loadHomepagesInDiffBrowsers {
 			// continue anyway
 		}
 
+		// in some browsers, might need Thread.sleep after loading the URL before By.xpath and By.cssSelector work
+		int delayAfterLoadingUrl_s = configSettings.SeleniumBrowserDelayTimes.DelayAfterLoadingUrl_s;
+		if (delayAfterLoadingUrl_s > 0) {
+			System.out.println("just loaded page... waiting " + delayAfterLoadingUrl_s
+					+ " seconds...");
+
+			try {
+				// System.out.println("sleeping in");
+				Thread.sleep(delayAfterLoadingUrl_s * 1000);
+			} catch (InterruptedException e) {
+				// e.printStackTrace();
+				System.out.println(e.getMessage());
+			} catch (Exception ex) {
+				System.out.println(ex.getMessage());
+			}
+		}
+		
 		// check that we got to the page...
 		String expectedTitle = testData.MainSitePage.Title;
 		String actualTitle = driver.getTitle();
@@ -89,14 +103,25 @@ public class loadHomepagesInDiffBrowsers {
 		System.out.println(msg);
 		logCollector.debug(msg);
 
-		Assert.assertEquals(actualTitle, expectedTitle);
+		AssertJUnit.assertEquals(actualTitle, expectedTitle);
 
+		// Click a link button - found using xpath or css or whatever
+		// returns exception message if not there, but we can check for something else
+		String clickResult = buttonClicker.Click(driver, pageElementLocators.MainSitePage.HomePageLinkBtn,
+				configSettings.SeleniumBrowserDelayTimes.DelayAfterClickButton_ms);
+		AssertJUnit.assertEquals(clickResult, "");		
+
+		// Other stuff...
+		//new Select(driver.findElement(...)).selectByValue("dropdown-value");
+		//driver.findElement(...).sendKeys("mytext" + Keys.TAB + "text in a textarea field after hitting tab");
 	}
 
+	@Test
 	@DataProvider
 	public Object[][] testWhichBrowsers() {
 		return testData.browsersToTest();
 	}
+
 
 	@BeforeTest
 	public void getBrowsers() {
@@ -105,6 +130,9 @@ public class loadHomepagesInDiffBrowsers {
 
 		// loop over testData.browsersToTest()
 		// - so not launching browsers we don't need
+		String msg = "getBrowsers... ";
+		System.out.println(msg);
+		logCollector.debug(msg);
 
 		Object[][] browsers = testData.browsersToTest();
 		for (int i = 0; i < browsers.length && i < 2000; i++) // no infiniloops
@@ -116,6 +144,11 @@ public class loadHomepagesInDiffBrowsers {
 
 	@AfterTest
 	public void closeBrowsers() {
+		
+		String msg = "closeBrowsers... ";
+		System.out.println(msg);
+		logCollector.debug(msg);
+		
 		browserProvider.closeBrowsers();
 	}
 
