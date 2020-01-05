@@ -31,4 +31,9 @@ public class configSettings {
 		public static final String FireFox = "C:\\selenium\\drivers\\geckodriver.exe";
 	}
 	
+	public class SeleniumClassNames {
+
+		public static final String IE = "org.openqa.selenium.ie.InternetExplorerDriver";
+	}
+	
 }

@@ -4,7 +4,7 @@ Platform for Internet Site Testing Over Long Distances
 - The sample connects to GitHub and clicks a link
 
 # PreReq
-* Requires git, maven, selenium, JDK (1.8 or greater)
+* Requires git, maven, selenium (Jar files and webdriver EXEs), JDK (1.8 or greater)
 * For the IDE, we can use Eclipse, VS Studio Code, etc
 
 # Install
@@ -28,24 +28,29 @@ git clone https://github.com/clynton/Pistold.git MyAutomationTestr
 
 # Try It
 1. Right-Click loadHomepagesInDiffBrowsers.java > Run as TestNG Test
-2. Run our test using maven (can be done in a bat file - using 'call mvn test' if so)
+2. Right-Click bddTestRunner.java > Run as JUnit Test
+3. Run our test using maven (can be done in a bat file - using 'call mvn test' if so)
 
 ```dos
 cd MyAutomationTestr\Core
 mvn test
 ```
 
+# Validation
+
+1. The Console/Output might show some warnings, but there shouldn't be any major errors
+2. Errors might result from missing/outdated Jar/Lib files, bad path or config values, etc
+3. Check that there's stuff in app.log after the test run
+4. Check files under target like htmlreports/index.html and cucumber-reports/report.html
+
 # Next Steps
 
-1. Double check that there's stuff in app.log after the test run
-2. Change the url and title page in testData.java
-3. Add test case classes similar to loadHomepageInDiffBrowsers.java
-4. Use the batch in jenkins, windows task manager, etc
+1. Change the url and title page in testData.java
+2. Add test case classes similar to loadHomepageInDiffBrowsers.java
+3. Use the batch in jenkins, windows task manager, etc
 
 
 # TO DO
-
-1. Next I'll proly add some BDD stuff - outside of Core
 
 
 <br/><br/><br/>

@@ -3,7 +3,7 @@
 <suite name="PistolTestSuite">
   <test thread-count="5" name="PistolHomePageTest">
     <classes>
-      <class name="testcases.loadHomepageInDiffBrowsers"/>
+      <class name="testngtestcases.loadHomepageInDiffBrowsers"/>
     </classes>
   </test> <!-- PistolHomePageTest -->
 </suite> <!-- PistolTestSuite -->
