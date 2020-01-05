@@ -17,14 +17,13 @@ git clone https://github.com/clynton/Pistold.git MyAutomationTestr
 
 # Setup
 	
-1. Rename the Core folder if desired (ex: if loading into eclipse and there are others already there)
-2. If using eclipse: Import Project > Maven > Existing Maven Project
-3. Rename 'groupId' in pom.xml to a desired company name
-4. Update the project after changing the POM: Right-Click project > Maven > Update Project
-5. Right-Click project > Properties > Libraries
-6. Edit the JDK/JRE setting if required: (or Add Library > JRE System Library > select one)
-7. Change the paths to the log files in log4j.properties
-8. Change the paths for SeleniumDriverPaths in configSettings.java
+1. If using eclipse: Import Project > Maven > Existing Maven Project
+2. Rename 'groupId' in pom.xml to a desired company name
+3. Update the project after changing the POM: Right-Click project > Maven > Update Project
+4. Right-Click project > Properties > Libraries
+5. Edit the JDK/JRE setting if required: (or Add Library > JRE System Library > select one)
+6. Change the paths to the log files in log4j.properties
+7. Change the paths for SeleniumDriverPaths in configSettings.java
 
 # Try It
 1. Right-Click loadHomepagesInDiffBrowsers.java > Run as TestNG Test
@@ -32,7 +31,7 @@ git clone https://github.com/clynton/Pistold.git MyAutomationTestr
 3. Run our test using maven (can be done in a bat file - using 'call mvn test' if so)
 
 ```dos
-cd MyAutomationTestr\Core
+cd MyAutomationTestr
 mvn test
 ```
 
