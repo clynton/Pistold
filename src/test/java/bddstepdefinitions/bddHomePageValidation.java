@@ -119,9 +119,6 @@ public class bddHomePageValidation {
 		AssertJUnit.assertEquals(actualTitle, expectedTitle);
 	}
 
-	// TODO: add browser closer - need to deal with the issue of other tests relying
-	// on it being open
-
 	@Given("^F01 S02 browser is up and home page is loaded$")
 	public void f01_s02_browser_is_up_and_home_page_is_loaded() throws Throwable {
 

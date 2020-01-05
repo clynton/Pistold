@@ -18,7 +18,7 @@ git clone https://github.com/clynton/Pistold.git MyAutomationTestr
 # Setup
 	
 1. If using eclipse: Import Project > Maven > Existing Maven Project
-2. Rename 'groupId' in pom.xml to a desired company name
+2. Change the values of 'groupId' and 'artifactId' in pom.xml
 3. Update the project after changing the POM: Right-Click project > Maven > Update Project
 4. Right-Click project > Properties > Libraries
 5. Edit the JDK/JRE setting if required: (or Add Library > JRE System Library > select one)
