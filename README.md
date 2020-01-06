@@ -26,8 +26,8 @@ git clone https://github.com/clynton/Pistold.git MyAutomationTestr
 7. Change the paths for SeleniumDriverPaths in configSettings.java
 
 # Try It
-1. Right-Click loadHomepagesInDiffBrowsers.java > Run as TestNG Test
-2. Right-Click bddTestRunner.java > Run as JUnit Test
+1. Right-Click loadHomepageInDiffBrowsers.java > Run as TestNG Test
+2. Right-Click bddRunnerTest.java > Run as JUnit Test
 3. Run our test using maven (can be done in a bat file - using 'call mvn test' if so)
 
 ```dos
