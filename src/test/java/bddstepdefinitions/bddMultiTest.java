@@ -3,11 +3,7 @@ package bddstepdefinitions;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.When;
 import cucumber.api.java.en.Then;
-import cucumber.api.junit.Cucumber;
 
-import org.junit.runner.RunWith;
-
-@RunWith(Cucumber.class)
 public class bddMultiTest {
 
     @Given("^F01 S03 want to do during smoke and regression$")

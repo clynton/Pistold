@@ -33,7 +33,7 @@ public class loadHomepageInDiffBrowsers {
 		}
 
 		//
-		System.out.println("Going to '" + testData.MainSitePage.Url + "' - in driver: " + driver.toString());
+		System.out.println("Going to '" + testData.MainSitePage.Url + "' - in driver: " + Keys.TAB + driver.toString());
 
 		// for some reason, get(page) is saying times out in ie - even though it works
 		try {
