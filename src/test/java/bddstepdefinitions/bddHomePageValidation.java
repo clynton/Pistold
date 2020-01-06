@@ -14,9 +14,11 @@ import utilities.browserProvider;
 import utilities.buttonClicker;
 import utilities.configSettings;
 import utilities.configSettings.Browser;
+import utilities.configSettings.OtherUsefulFiles;
 import utilities.logCollector;
 import utilities.pageElementLocators;
 import utilities.testData;
+import utilities.testDataFromPropertyFile;
 
 // Tidy places "@RunWith(Cucumber.class)" here, but it must only appear in test runner classes...
 public class bddHomePageValidation {
@@ -65,12 +67,19 @@ public class bddHomePageValidation {
 					}
 				}
 			}
-
-			driver.get(testData.MainSitePage.Url);
+		
+			String mainPageUrl = testDataFromPropertyFile.getPropertyVal(testData.MainSitePage.UrlPropertyNameInDataFile);
+			if (mainPageUrl == null || mainPageUrl == "")
+			{
+				Assert.fail("Property '" + testData.MainSitePage.UrlPropertyNameInDataFile + "' apparently missing from Property File: '" + OtherUsefulFiles.TestDataPropertyFile + "'");
+			}
+			
+			logCollector.debug("Loading page: " + mainPageUrl);
+			
+			driver.get(mainPageUrl);
 
 		} catch (Exception ex) {
-			//
-			System.out.println(ex);
+			//System.out.println(ex);
 
 //			org.openqa.selenium.TimeoutException: Timed out waiting for page to load.
 //			Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:25:48'
@@ -153,12 +162,19 @@ public class bddHomePageValidation {
 					}
 				}
 			}
-
-			driver.get(testData.MainSitePage.Url);
+			
+			String mainPageUrl = testDataFromPropertyFile.getPropertyVal(testData.MainSitePage.UrlPropertyNameInDataFile);
+			if (mainPageUrl == null || mainPageUrl == "")
+			{
+				Assert.fail("Property '" + testData.MainSitePage.UrlPropertyNameInDataFile + "' apparently missing from Property File: '" + OtherUsefulFiles.TestDataPropertyFile + "'");
+			}
+			
+			logCollector.debug("Loading page: " + mainPageUrl);
+			
+			driver.get(mainPageUrl);
 
 		} catch (Exception ex) {
-			//
-			System.out.println(ex);
+			//System.out.println(ex);
 
 //			org.openqa.selenium.TimeoutException: Timed out waiting for page to load.
 //			Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:25:48'

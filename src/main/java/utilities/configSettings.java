@@ -36,4 +36,10 @@ public class configSettings {
 		public static final String IE = "org.openqa.selenium.ie.InternetExplorerDriver";
 	}
 	
+	public class OtherUsefulFiles {
+
+		public static final String TestDataPropertyFile = "config\\testDataProps.properties";
+	}
+	
+	
 }

@@ -4,6 +4,7 @@ import org.testng.annotations.Test;
 import org.testng.AssertJUnit;
 import java.util.concurrent.TimeUnit;
 
+import org.junit.Assert;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterTest;
@@ -13,9 +14,11 @@ import utilities.browserProvider;
 import utilities.buttonClicker;
 import utilities.configSettings;
 import utilities.configSettings.Browser;
+import utilities.configSettings.OtherUsefulFiles;
 import utilities.logCollector;
 import utilities.pageElementLocators;
 import utilities.testData;
+import utilities.testDataFromPropertyFile;
 
 public class loadHomepageInDiffBrowsers {
 
@@ -32,8 +35,13 @@ public class loadHomepageInDiffBrowsers {
 			return;
 		}
 
-		//
-		System.out.println("Going to '" + testData.MainSitePage.Url + "' - in driver: " + Keys.TAB + driver.toString());
+		String mainPageUrl = testDataFromPropertyFile.getPropertyVal(testData.MainSitePage.UrlPropertyNameInDataFile);
+		if (mainPageUrl == null || mainPageUrl == "")
+		{
+			Assert.fail("Property '" + testData.MainSitePage.UrlPropertyNameInDataFile + "' apparently missing from Property File: '" + OtherUsefulFiles.TestDataPropertyFile + "'");
+		}
+		
+		logCollector.debug("Loading page '" + mainPageUrl + "' - in driver: " + Keys.TAB + driver.toString());
 
 		// for some reason, get(page) is saying times out in ie - even though it works
 		try {
@@ -63,7 +71,7 @@ public class loadHomepageInDiffBrowsers {
 				}
 			}
 
-			driver.get(testData.MainSitePage.Url);
+			driver.get(mainPageUrl);
 
 		} catch (Exception ex) {
 			//

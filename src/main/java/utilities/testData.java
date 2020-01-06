@@ -6,8 +6,9 @@ public class testData {
 
 	public class MainSitePage {
 		public static final String Title = "The world’s leading software development platform · GitHub";
-		public static final String Url = "https://github.com/";
-
+		
+		// we can set the URL here... or we can pull it from a property file :)
+		public static final String UrlPropertyNameInDataFile = "MainSitePageUrl";
 	}
 
 //	private static Object[][] _browsersToTest = new Object[][] { new Object[] {

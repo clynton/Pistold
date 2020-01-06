@@ -1,7 +1,8 @@
 # Pistold
 Platform for Internet Site Testing Over Long Distances
-- A simple automation test project - using Selenium
-- The sample connects to GitHub and clicks a link
+- A simple automation test project - using Selenium - built using Maven
+- The sample connects to GitHub in Chrome/Firefox/IE web Driver(s) and clicks a link
+- has examples of using Data Driven and Behavior Driven Testing frameworks
 
 # PreReq
 * Requires git, maven, selenium (Jar files and webdriver EXEs), JDK (1.8 or greater)
@@ -28,7 +29,7 @@ git clone https://github.com/clynton/Pistold.git MyAutomationTestr
 # Try It
 1. Right-Click loadHomepageInDiffBrowsers.java > Run as TestNG Test
 2. Right-Click bddRunnerTest.java > Run as JUnit Test
-3. Run our test using maven (can be done in a bat file - using 'call mvn test' if so)
+3. Run our tests using maven (can be done in a bat file - using 'call mvn test' if so)
 
 ```dos
 cd MyAutomationTestr
@@ -45,12 +46,13 @@ mvn test
 # Next Steps
 
 1. Change the url and title page in testData.java
-2. Add test case classes similar to loadHomepageInDiffBrowsers.java
-3. Use the batch in jenkins, windows task manager, etc
-
+2. Remove extra things if desired - ex: testDataFromPropertyFile
+3. Add test case classes similar to loadHomepageInDiffBrowsers.java
+4. Use the batch file in jenkins, windows task manager, etc
 
 # TO DO
-
+- maybe use POI to pull test data from Excel files - keyword driven framework
+- maybe setup a Selenium Grid environment - having a local hub and nodes... 
 
 <br/><br/><br/>
 
