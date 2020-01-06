@@ -10,8 +10,6 @@ import com.cucumber.listener.Reporter;
 import cucumber.api.CucumberOptions;
 import cucumber.api.junit.Cucumber;
 
-import cucumber.api.junit.Cucumber;
-
 // manually add "import cucumber.api.junit.Cucumber;" for "Cucumber.class" below
 
 @RunWith(Cucumber.class)
@@ -27,8 +25,10 @@ import cucumber.api.junit.Cucumber;
 //		tags = { "@smoketest" }
 		tags = { "@smoketest, @regressiontest" }
 )
-public class bddTestRunner {
-
+public class bddRunnerTest {
+	// NOTE: Class must start/end with case sensitive "Test"
+	// https://maven.apache.org/surefire/maven-surefire-plugin/test-mojo.html#includes
+	
 	@AfterClass
 	public static void writeExtentReport() {
 		Reporter.loadXMLConfig(new File("config/report.xml"));
