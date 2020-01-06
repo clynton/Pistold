@@ -1,11 +1,15 @@
 package bddstepdefinitions;
 
-import cucumber.api.PendingException;
-import cucumber.api.java.en.Given;
-import cucumber.api.java.en.When;
-import cucumber.api.java.en.Then;
+import java.util.concurrent.TimeUnit;
+
+import org.junit.Assert;
+import org.openqa.selenium.WebDriver;
+import org.testng.AssertJUnit;
+
 import cucumber.api.java.en.And;
-import cucumber.api.junit.Cucumber;
+import cucumber.api.java.en.Given;
+import cucumber.api.java.en.Then;
+import cucumber.api.java.en.When;
 import utilities.browserProvider;
 import utilities.buttonClicker;
 import utilities.configSettings;
@@ -14,14 +18,7 @@ import utilities.logCollector;
 import utilities.pageElementLocators;
 import utilities.testData;
 
-import java.util.concurrent.TimeUnit;
-
-import org.junit.Assert;
-import org.junit.runner.RunWith;
-import org.openqa.selenium.WebDriver;
-import org.testng.AssertJUnit;
-
-@RunWith(Cucumber.class)
+// Tidy places "@RunWith(Cucumber.class)" here, but it must only appear in test runner classes...
 public class bddHomePageValidation {
 
 	WebDriver driver = null;
