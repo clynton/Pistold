@@ -3,6 +3,7 @@ Platform for Internet Site Testing Over Long Distances
 - A simple automation test project - using Selenium - built using Maven
 - The sample connects to GitHub in Chrome/Firefox/IE web Driver(s) and clicks a link
 - has examples of using Data Driven and Behavior Driven Testing frameworks
+- Here's a test run of a sample project: https://youtu.be/7fYD-rgSaR0
 
 # PreReq
 * Requires git, maven, selenium (Jar files and webdriver EXEs), JDK (1.8 or greater)
